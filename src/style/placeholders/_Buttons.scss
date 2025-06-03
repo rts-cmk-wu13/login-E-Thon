@@ -1,0 +1,21 @@
+
+%btnBase {
+  width: 100%;
+  height: fit-content;
+  padding: 1rem 0;
+  border-radius: 24px;
+}
+
+%blueBtn {
+  @extend %btnBase;
+  box-shadow: 0 16px 60px 0 c.$b-shadow;
+  background: c.$blue;
+  color: c.$bg;
+}
+
+%whiteBtn {
+  @extend %btnBase;
+  box-shadow: 0 16px 60px 0 c.$w-shadow;
+  background: c.$bg;
+  color: c.$blue;
+}
