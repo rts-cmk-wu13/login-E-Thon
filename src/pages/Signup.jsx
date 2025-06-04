@@ -1,7 +1,7 @@
 import { Form, useActionData } from "react-router"
 
 
-export default function Contact() {
+export default function Signup() {
     const errors = useActionData();
 
     return (

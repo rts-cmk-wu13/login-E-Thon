@@ -1,0 +1,8 @@
+@use "../../style/placeholders/Buttons";
+
+.whiteBtn {
+    @extend %whiteBtn;
+}
+.blueBtn {
+    @extend %blueBtn;
+}

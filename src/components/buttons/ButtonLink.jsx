@@ -1,7 +1,10 @@
-import { Link } from "react-router"
+import { Link, useLocation } from "react-router"
 
-export default function ButtonLink({to, text}){
+export default function ButtonLink({to, text, className}){
+    const location = useLocation()
     return (
-        <Link to={to}><button>{text}</button></Link>
+        <Link to={to}><button className={className} 
+             type={location.pathname === "/login" ? "submit" : "button"}
+        >{text}</button></Link>
     )
 }

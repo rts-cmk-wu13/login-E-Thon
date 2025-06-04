@@ -1,10 +1,12 @@
-import { Link } from "react-router"
+import LogoLink from "../components/logo/LogoLink"
+import "./_Home.scss";
 
 export default function Home() {
     return (
         <>
-            <h1>Home</h1>
-            <Link to="/contact">Contact</Link>
+            <LogoLink />
+            <h1 className="title">early bird.</h1>
+            <p>Your local discount mate</p>
         </>
     )
 }

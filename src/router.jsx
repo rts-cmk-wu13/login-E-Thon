@@ -1,9 +1,9 @@
 import { createBrowserRouter } from "react-router";
 import Home from "./pages/Home";
-import Contact from "./pages/Contact";
 import ListDetail from "./pages/ListDetail";
 import Lists from "./pages/Lists";
 import NotFound from "./pages/NotFound";
+import Signup from "./pages/Signup";
 import { getList, getLists } from "./utilities/typicode";
 import Loading from "./components/loading/Loading";
 import { ErrorBoundary } from "./components/error/ErrorBoundary";
@@ -24,16 +24,12 @@ const router = createBrowserRouter([
                 element: <Home />
             },
             {
-                path: "lists",
-                element: (
-                    <RequireAuth >
-                        <Lists />
-                    </ RequireAuth>
-                ),
+                path: "statements",
+                element: <Lists />,
                 loader: getLists,
             },
             {
-                path: "lists/:id",
+                path: "secrets",
                 element: (
                     <RequireAuth >
                         <ListDetail />
@@ -42,8 +38,8 @@ const router = createBrowserRouter([
                 loader: getList,
             },
             {
-                path: "contact",
-                element: <Contact />,
+                path: "signup",
+                element: <Signup />,
                 action: handleSubmit,
             },
             {

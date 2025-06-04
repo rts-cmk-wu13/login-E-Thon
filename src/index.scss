@@ -6,35 +6,38 @@
 @use "./components/navigation/Navigation";
 @use "./style/variables/Colors" as c;
 @use "./style/placeholders/Base";
+@use "./style/mixins/Font-mixin" as f;
 
-@font-face {
-    font-family: 'MyCustomFont';
-    src: url('../fonts/MyFont.woff2') format('woff2'); /* justér stien hvis nødvendigt */
-    font-weight: normal;
-    font-style: normal;
-}
 :root {
   @extend %base;
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  @include f.body();
 }
 
 body {
   margin: 0;
   display: flex;
   place-items: center;
-  min-width: 20rem;
+  min-width: 100vw;
   min-height: 100vh;
 }
 
 #root {
-max-width: 80rem;
-margin: 0 auto;
-padding: 2rem;
-text-align: center;
-
+  max-width: 80vh;
+  margin: 0 auto;
+  text-align: center;
 }
 
+.title {
+  color: c.$blue;
+  @include f.heading($size: 3.875rem, $line-height: 100%);
+}
 h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+  color: c.$blue;
+  @include f.heading();
+}
+p {
+  color: c.$fonts;
+}
+input {
+  color: c.$form-fonts;
 }

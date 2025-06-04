@@ -1,6 +1,7 @@
 import { Form, useLocation, useNavigate } from "react-router"
 import { useAuth } from "../contexts/AuthContext"
 import { useState } from "react"
+import ButtonLink from "../components/buttons/ButtonLink"
 
 export default function Login() {
     const [error, setError] = useState(null)
@@ -46,7 +47,11 @@ export default function Login() {
                 <input type="password" name="password" id="password" />
             </div>
             {error && (<div>{error}</div>)}
-            <button type="submit">Log in</button>
+            {location.pathname === "/login" && (<ButtonLink
+                            to="/login"
+                            className="login whiteBtn"
+                            text="Login ->"
+                        />)}
         </Form>
     )
 }

@@ -5,17 +5,17 @@ import Header from "./components/header/Header"
 export default function Layout() {
   return (
     <>
-      <Header 
-        header="My App"
-      />
+      <header>
+        <Header />
+      </header>
 
-      <main> 
-      <Outlet />
+      <main>
+        <Outlet />
       </main>
 
-      <Footer 
-      copyright="2025 My App"
-      />
+      <footer>
+        <Footer />
+      </footer>
     </>
   )
 }

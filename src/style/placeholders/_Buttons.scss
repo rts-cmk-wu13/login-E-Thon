@@ -1,12 +1,15 @@
 @use "../variables/Colors" as c;
-@use "../mixins/Font-mixin";
+@use "../mixins/Font-mixin" as f;
 
 %btnBase {
-    @include body($weight: 700);
+    @include f.body($weight: 700);
     width: 100%;
     height: fit-content;
     padding: 1rem 0;
     border-radius: 24px;
+    padding: 1.4rem;
+    margin: .3rem;
+    border: none;
 }
 
 %blueBtn {
