@@ -8,7 +8,9 @@ export default function LogoutBtn() {
 
     function handleLogout(){
         logout()
-        navigate("/")
+        setTimeout(() => {
+            navigate("/")
+        }, 0);
     }
 
     return token?(

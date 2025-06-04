@@ -4,7 +4,7 @@
 @use "./components/header/Header";
 @use "./components/loading/Loading";
 @use "./components/navigation/Navigation";
-@use "./variables/colors";
+@use "./style/variables/Colors" as c;
 @use "./style/placeholders/Base";
 
 @font-face {
