@@ -2,10 +2,14 @@ import { Form, useLocation, useNavigate } from "react-router"
 import { useAuth } from "../contexts/AuthContext"
 import { useState } from "react"
 import ButtonLink from "../components/buttons/ButtonLink"
+import Formgroup from "../components/formgroup/formgroup"
+import { FaArrowRight } from "react-icons/fa"
+import LogoLink from "../components/logo/LogoLink"
+// import "./_Login.scss";
 
 export default function Login() {
     const [error, setError] = useState(null)
-    const {login} = useAuth()
+    const { login } = useAuth()
     const location = useLocation()
     const navigate = useNavigate()
 
@@ -27,31 +31,41 @@ export default function Login() {
         })
         const userdata = await response.json()
 
-        if(!response.ok){
+        if (!response.ok) {
             setError(userdata.message || userdata.error || "Please provide login informations")
         } else {
             login(userdata.accessToken)
             navigate(from, { replace: true })
         }
-        
+
     }
     // for browser try, use username: emilys password: emilyspass
-    return(
-        <Form onSubmit={handleLogin}>
-            <div className="formgroup">
-                <label htmlFor="username">Username</label>
-                <input type="text" name="username" id="username" />
-            </div>
-            <div className="formgroup">
-                <label htmlFor="password">Password</label>
-                <input type="password" name="password" id="password" />
-            </div>
-            {error && (<div>{error}</div>)}
-            {location.pathname === "/login" && (<ButtonLink
-                            to="/login"
-                            className="login whiteBtn"
-                            text="Login ->"
-                        />)}
-        </Form>
+    return (
+        <>
+            <h1>Login</h1>
+            <LogoLink />
+            <Form onSubmit={handleLogin}>
+                <Formgroup
+                    type="text"
+                    text="username"
+                    placeholder="Email address"
+                />
+                <Formgroup
+                    type="password"
+                    text="password"
+                    placeholder="Password"
+                />
+                {error && (<div>{error}</div>)}
+                {location.pathname === "/login" && (<ButtonLink
+                    to="/login"
+                    className="login blueBtn"
+                    text={
+                        <>
+                            Login <FaArrowRight />
+                        </>
+                    }
+                />)}
+            </Form>
+        </>
     )
 }

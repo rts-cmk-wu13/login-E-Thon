@@ -1,0 +1,12 @@
+@use "../../style/variables/Colors" as c;
+@use "../../style/mixins/Font-mixin" as f;
+
+input {
+    @include f.body($weight: 400);
+    border-radius: 24px;
+    border: none;
+    box-shadow: 0 16px 60px 0 c.$w-shadow;
+    margin: .5rem;
+    padding: .8rem;
+    width: 100%;
+}

@@ -16,7 +16,6 @@
 body {
   margin: 0;
   display: flex;
-  place-items: center;
   min-width: 100vw;
   min-height: 100vh;
 }
@@ -27,17 +26,24 @@ body {
   text-align: center;
 }
 
+main {
+  padding-top: 2rem;
+}
+
 .title {
   color: c.$blue;
   @include f.heading($size: 3.875rem, $line-height: 100%);
 }
+
 h1 {
   color: c.$blue;
   @include f.heading();
 }
+
 p {
   color: c.$fonts;
 }
+
 input {
   color: c.$form-fonts;
 }

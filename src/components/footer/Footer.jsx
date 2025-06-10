@@ -1,6 +1,7 @@
 import { useLocation } from "react-router";
 import ButtonLink from "../buttons/ButtonLink";
 import "./_Footer.scss";
+import { FaArrowRight } from "react-icons/fa";
 
 export default function Footer() {
     const location = useLocation()
@@ -16,7 +17,11 @@ export default function Footer() {
             {location.pathname === "/" && (<ButtonLink
                 to="/login"
                 className="login whiteBtn"
-                text="Login ->"
+                text={
+                    <>
+                    Login <FaArrowRight />
+                    </>
+                }
             />)}
         </>
     )
