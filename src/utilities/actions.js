@@ -21,7 +21,7 @@ export async function handleSubmit({ request }) {
     }
 
     // her: fetch... method post:
-    const response = await fetch('https://jsonplaceholder.typicode.com/users', {
+    const response = await fetch('http://localhost:4000/users/', {
         method: "POST",
         headers: {
             "Content-Type": "application/json"

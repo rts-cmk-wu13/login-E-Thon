@@ -1,4 +1,4 @@
-import "./Formgroup.scss";
+import "./_Formgroup.scss";
 
 export default function Formgroup({text, placeholder, type}) {
     return (

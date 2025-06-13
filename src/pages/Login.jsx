@@ -5,7 +5,7 @@ import ButtonLink from "../components/buttons/ButtonLink"
 import Formgroup from "../components/formgroup/formgroup"
 import { FaArrowRight } from "react-icons/fa"
 import LogoLink from "../components/logo/LogoLink"
-// import "./_Login.scss";
+import "./_Login.scss";
 
 export default function Login() {
     const [error, setError] = useState(null)
@@ -22,11 +22,8 @@ export default function Login() {
 
         // validér her...
 
-        const response = await fetch("https://dummyjson.com/auth/login", {
+        const response = await fetch("http://localhost:4000/login", {
             method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
             body: JSON.stringify(data),
         })
         const userdata = await response.json()
@@ -39,7 +36,7 @@ export default function Login() {
         }
 
     }
-    // for browser try, use username: emilys password: emilyspass
+    // for browser try, use email: clu@mail.dk , password: 123456
     return (
         <>
             <h1>Login</h1>
@@ -58,7 +55,7 @@ export default function Login() {
                 {error && (<div>{error}</div>)}
                 {location.pathname === "/login" && (<ButtonLink
                     to="/login"
-                    className="login blueBtn"
+                    className="loginBtn blueBtn"
                     text={
                         <>
                             Login <FaArrowRight />
